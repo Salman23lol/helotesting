@@ -14,10 +14,11 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: ["https://helotesting.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    origin: '*',
+    methods: '*',
     credentials: true
 }));
+
 
 // User routes
 app.use('/user', userRoutes);
