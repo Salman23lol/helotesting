@@ -13,7 +13,13 @@ const app = express();
 // Middleware setup
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+app.use(cors(
+    {
+    origin:["https://helotesting.vercel.app"],
+    metheds:["POST","GET","PUT","DELETE"],
+    credentials: true 
+    }
+));
 // User routes
 app.use('/user', userRoutes);
 app.use('/recipe', recipeRouter);
