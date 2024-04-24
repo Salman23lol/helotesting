@@ -19,6 +19,9 @@ app.use(cors({
     credentials: true
 }));
 
+app.get("/", (req,res) =>{
+    res.json("Hello Wrold")
+})
 
 // User routes
 app.use('/user', userRoutes);
